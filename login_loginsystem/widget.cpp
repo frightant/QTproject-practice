@@ -1,11 +1,17 @@
 #include "widget.h"
 #include "ui_widget.h"
 #include <QMessageBox>
+#include <QPixmap>
+//用于插入图片
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Widget)
 {
     ui->setupUi(this);
+    QPixmap pix(":/img/1.jpg");
+    int w = ui->lebpix->width();
+    int h = ui->lebpix->height();
+    ui->lebpix->setPixmap(pix.scaled(w,h,Qt::KeepAspectRatio));
 }
 
 Widget::~Widget()
