@@ -17,7 +17,7 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::openActionslots(){
-    QString filename= QFileDialog::getOpenFileName(this, tr("选择一个文件"),QCoreApplication::applicationFilePath(),"*.cpp");//别人已经写好的文件框，直接调用来使用就行，在帮助里面搜索关键词getopenfile第一个就是。
+    QString filename= QFileDialog::getOpenFileName(this, "选择一个文件",QCoreApplication::applicationFilePath(),"*.cpp");//别人已经写好的文件框，直接调用来使用就行，在帮助里面搜索关键词getopenfile第一个就是。
     if(filename.isEmpty())
     {
         QMessageBox::warning(this,"警告","已返回内容没保存");//QMessageBox是一个弹窗类
